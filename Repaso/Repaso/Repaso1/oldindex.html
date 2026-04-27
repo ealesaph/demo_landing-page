@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento HTML</title>
+    <link rel="stylesheet" href="oldstyle.css"> <!-- hace referencia a oldstyle.css -->
+</head>
+<body>
+    <header class="header"> <!-- clase para el header -->
+        <div class="brand"> <!-- clase para el logo -->
+            <a href="#">Mi Logo</a>
+        </div>
+
+        <h1>Mi pagina HTML basica</h1>
+
+        <!-- Navegación de PC: botones visibles en pantallas grandes -->
+        <nav class="nav-desktop" aria-label="Menú principal de PC">
+            <button class="nav-button" type="button">Inicio</button>
+            <button class="nav-button" type="button">Servicios</button>
+            <button class="nav-button" type="button">Contacto</button>
+        </nav>
+
+        <!-- Navegación de celular: menú hamburguesa -->
+        <div class="nav-mobile-wrapper">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+                ☰
+                <span class="sr-only">Abrir menú</span>
+            </button>
+            <nav class="nav-mobile" id="mobile-menu" aria-label="Menú principal de celular">
+                <button class="nav-button" type="button">Inicio</button>
+                <button class="nav-button" type="button">Servicios</button>
+                <button class="nav-button" type="button">Contacto</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <p>Este es un documento HTML básico con notaciones.</p>
+    </main>
+
+    <footer>
+        <p>Derechos reservados &copy; 2024</p>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const mobileMenu = document.querySelector('.nav-mobile');
+
+        if (navToggle && mobileMenu) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', String(!isOpen));
+                mobileMenu.classList.toggle('visible');
+            });
+        }
+    </script>
+</body>
+</html>
