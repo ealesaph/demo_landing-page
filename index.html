@@ -1,71 +1,78 @@
 <!DOCTYPE html>
-<html lang = "es">
+<html lan = "es">
     <head>
-        <meta charset="UTF-8">
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-        <title>
-            Landing Page
-        </title>
-        <link rel = "stylesheet" href = "style.css">
+        <meta charset="UTF8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Landing Page</title>
+        <link rel="stylesheet" href="style.css">
     </head>
-
     <body>
-        <header class ="site-header">
-            <div class="brand">
-                <a href="#inicio"> Hewi Corp. </a>
-            </div>
+            <header class="site-header">
+                <div class = "brand">
+                    <a href="#inicio"> Hewi Corp. </a> 
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class = "main-nav" id = "main-nav">
+                    <ul>
+                        <li><a href="#inicio"> Inicio </a></li>
+                        <li><a href="#servicios"> Servicios </a></li>
+                        <li><a href="#acerca"> Acerca </a></li>
+                        <li><a href="#contacto"> Contacto </a></li>
+                    </ul>
+                </nav>
+            </header>
 
-            <button class="nav-toggle" aria-label="Abrir Menu" aria-expanded="false" aria-controls="main-nav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <nav class ="main-nav" id="main-nav">
-                <ul>
-                    <li><a href = "#Inicio">
-                        Inicio
-                    </a></li>
-                    <li><a href = "#Acerca de">
-                        Acerca de
-                    </a></li>
-                    <li><a href = "#Servicios">
-                        Servicios
-                    </a></li>
-                    <li><a href = "#Contacto">
-                        Contacto
-                    </a></li>
-                    <li><a href = "#Modo Oscuro">
-                        Modo Oscuro
-                    </a></li> /* Activar un modo oscuro para la página */
-                </ul>
-            </nav>
-
-        </header>
-        <main>
-            <section id="inicio">
+            <main>
                 <h1>Bienvenido a Hewi Corp.</h1>
-                <p> Una empresa dedicada a entregar servicios de alta calidad :)</p>
-            </section>
-
-            <section id="acerca">
-                <h2>Acerca de Nosotros</h2>
-                <p>En Hewi Corp., nos especializamos en ofrecer soluciones innovadoras para nuestros clientes. Nuestro equipo está compuesto por profesionales altamente capacitados que se dedican a brindar un servicio excepcional.</p>
-            </section>
-
-            <section id="servicio">
-
-            </section>
+                <p>Somos una empresa dedicada a ofrecer soluciones innovadoras para tu negocio. Nuestro equipo de expertos está listo para ayudarte a alcanzar tus objetivos.</p>
             
-            <section id="contacto">
 
-            </section>
+                <section id="inicio">
+                    <h2>Inicio</h2>
+                    <p>En esta sección encontrarás información sobre nuestros productos y servicios. Explora nuestras ofertas y descubre cómo podemos ayudarte a crecer.</p>
+                </section>
 
-        </main>
-        <footer>
-            <p>
-                &copy; 2024 Hewi Corp. Todos los derechos reservados.
-            </p>
-        </footer>
-    </body>
+                <section id="servicios">
+                    <h2>Servicios</h2>
+                    <p>Ofrecemos una amplia gama de servicios, desde consultoría hasta desarrollo personalizado. Nuestro enfoque se centra en entender tus necesidades y proporcionar soluciones a medida.</p>
+                </section>
+
+                <section id="acerca">
+                    <h2>Acerca</h2>
+                    <p>Hewi Corp. fue fundada en 2010 con la misión de transformar la manera en que las empresas operan. Con más de una década de experiencia, hemos ayudado a cientos de clientes a alcanzar el éxito.</p>
+                </section>
+
+                <section id="contacto">
+                    <h2>Contacto</h2>
+                    <p>¿Tienes preguntas o quieres saber más sobre nuestros servicios? No dudes en contactarnos. Estamos aquí para ayudarte.</p>
+                    <ul>
+                        <li>Email: enrique.alegria02@inacapmail.cl
+                        </li>
+                        <li>Teléfono: +56 9 1234 5678</li>
+                        <li>Dirección: Calle Falsa 123, Ciudad, País</li>   
+                    </ul>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; 2024 Hewi Corp. Todos los derechos reservados.</p>
+            </footer>
+
+            <script>
+                const navToggle = document.querySelector('.nav-toggle');
+                const mainNav = document.getElementById('main-nav');
+
+                navToggle.addEventListener('click', () => {
+                    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                    navToggle.setAttribute('aria-expanded', !isExpanded);
+                    mainNav.style.display = isExpanded ? 'none' : 'block';
+                });
+            </script>
+
+        </body>
+
 </html>
