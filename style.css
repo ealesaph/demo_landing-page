@@ -1,7 +1,7 @@
 :root {
     font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-    background: #f7f7f7
+    color: #101010;
+    background: #e4e4e4
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 }
 
 .brand a {
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -47,7 +47,7 @@ body {
     display: block;
     width: 100%;
     height: 3px;
-    background: #333;
+    background: #ffffff;
     border-radius: 999px;
 }
 
@@ -69,7 +69,7 @@ body {
 }
 
 .main-nav a {
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     display: block;
@@ -87,7 +87,7 @@ main {
 
 footer {
     background: rgb(255, 89, 29);
-    color: #333;
+    color: #000000;
     text-align: center;
     padding: 1rem;
 }
@@ -113,4 +113,37 @@ footer {
     .main-nav a {
         padding: 0.5rem 1rem;
     }
+}
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+
+}
+
+/* IMAGENES */
+.hero-image {
+  /* La ruta de tu imagen */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('ruta/tu-imagen.jpg');
+
+    /* Altura completa */
+    height: 100vh;
+
+    /* Centrar y escalar la imagen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    /* Flexbox para centrar el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-text {
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
 }
