@@ -9,6 +9,22 @@ body {
     line-height: 1.5;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background: #333;
+    padding: 10px;
+}
+
+.container div {
+    background-color: darkslategrey;
+    border: 1px solid black;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .site-header {
     background: rgb(255, 89, 29);
     color: #333;
