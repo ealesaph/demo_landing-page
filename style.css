@@ -11,14 +11,17 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
-    background: #333;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: #fffbc5;
     padding: 10px;
+    border-radius: 30px;
+    border: 15px solid #c8b696;
+    border-width: 2px;
 }
-
+/* Esta cosa es para el banner */
 .container div {
+    margin: 0;
     background-color: darkslategrey;
-    border: 1px solid black;
     padding: 10px;
     align-items: center;
     justify-content: center;
@@ -131,12 +134,11 @@ footer {
     }
 }
 
-.hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-
+/* IMAGENES */
+img {
+    width: 100%;
 }
 
-/* IMAGENES */
 .hero-image {
   /* La ruta de tu imagen */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('ruta/tu-imagen.jpg');
@@ -167,20 +169,83 @@ footer {
 
 
 .galeria {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     padding: 15px;
 }
 
 .galeria img {
-    width: 100%
-    height 200px;
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(0.5, 1fr);
+    gap: 15px;
+    padding: 15px;
+    row-gap: 2px;
+    align-content: center;
+}
+
+.galeria-grid img {
+    width: 415px;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
-.galeria img:hover {
-    transform: scale(1.05);
+.galeria-grid img {
+        transform: scale(1.05);
+}
+
+.galeria-hero {
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+.banner {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    padding: 20px 20px 20px 20px;
+    transition: transform 0.3s ease;
+}
+
+.banner img {
+    width: 97%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.location {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+.location iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    object-fit: cover;  
 }
