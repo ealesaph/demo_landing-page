@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang = "es">
     <head>
-        <meta charset="UT-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Farmacia SaludPlus</title>
         <link rel="stylesheet" href="style.css">
-        
     </head>
     <body>
+        <div class="page-wrapper">
             <header class="site-header">
                 <div class = "brand">
                     <a href="#inicio"> Farmacia SaludPlus </a> 
@@ -37,7 +37,7 @@
         <form>
             <input type="text" placeholder="Tu nombre" required>
             <input type="email" placeholder="Tu correo" required>
-            <input placeholder="Tu mensaje" required>
+            <textarea placeholder="Tu mensaje" required></textarea>
             <button type="submit">Enviar</button>
         </form>
     </div>
@@ -51,12 +51,11 @@
                     <a href="#servicios" class="btn">Ver nuestras categorías</a>
                 </section>
 
-            <div class = "hero-image" style="background-image: url('src/Hero-assets/maxresdefault.jpg');">
-                <div class="hero-text" alt ="Imagen de fondo">
+            <div class = "hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('src/Hero-assets/maxresdefault.jpg');">
+                <div class="hero-text">
                     <h2>Farmacia SaludPlus</h2>
                     <p>Productos de salud confiables para ti y tu familia</p>
-
-                <button class="btn" id="abrir-formulario">Contáctanos</button>
+                    <button class="btn" id="abrir-formulario">Contáctanos</button>
                 </div>
             </div>
 
@@ -108,7 +107,8 @@
                             <ul>
                                 <li>Email: contacto@saludplus.cl</li>
                                 <li>Teléfono: +56 9 7654 3210</li>
-                                <li>Dirección: Av. Salud 456, Ciudad, País</li>   
+                                <li>Dirección: Av. Salud 456, Ciudad, País</li>
+                            </ul>
                         </section>
                     </div>                        
                 </div>
@@ -116,7 +116,7 @@
             </main>
 
             <footer>
-                <div class="foot-grid" >
+                <div class="footer-grid">
                     <div class="footer-grid_item">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805.1742582379635!2d-70.51684487271912!3d-33.44761211233083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cde7a14d679d%3A0xbda2d39fa4c39c5f!2sCarpay%2C%20La%20Reina%2C%20Regi%C3%B3n%20Metropolitana!5e1!3m2!1sen!2scl!4v1777428447497!5m2!1sen!2scl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <h2>Ubicación</h2>
@@ -124,34 +124,27 @@
                     </div>
                 </div>
                 <h5>&copy; 2026 Farmacia SaludPlus. Todos los derechos reservados.</h5>
-            </footer>
-
+            </footer>        </div>
             <script>
                 const navToggle = document.querySelector('.nav-toggle');
                 const mainNav = document.getElementById('main-nav');
+                const btnAbrir = document.getElementById('abrir-formulario');
+                const formulario = document.getElementById('formulario-contacto');
+                const btnCerrar = document.getElementById('cerrar-formulario');
 
                 navToggle.addEventListener('click', () => {
                     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-                    navToggle.setAttribute('aria-expanded', !isExpanded);
-                    mainNav.style.display = isExpanded ? 'none' : 'block';
+                    navToggle.setAttribute('aria-expanded', String(!isExpanded));
+                    mainNav.classList.toggle('open');
                 });
-            </script>
 
-            <script>
-            const btnAbrir = document.getElementById('abrir-formulario');
-            const formulario = document.getElementById('formulario-contacto');
-            const btnCerrar = document.getElementById('cerrar-formulario');
+                btnAbrir.addEventListener('click', () => {
+                    formulario.classList.toggle('oculto');
+                });
 
-            btnAbrir.addEventListener('click', () => {
-                formulario.classList.toggle('oculto');
-            });
-            btnAbrir.addEventListener('click', () => {
-                formulario.classList.remove('oculto');
-            });
-
-            btnCerrar.addEventListener('click', () => {
-                formulario.classList.add('oculto');
-            });
+                btnCerrar.addEventListener('click', () => {
+                    formulario.classList.add('oculto');
+                });
             </script>
         </body>
 
