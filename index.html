@@ -31,6 +31,16 @@
                 <img src="src/Lab-assets/istockphoto-1397013091-612x612.jpg" alt="laboratorio">
             </div>
 
+    <div id="formulario-contacto" class="formulario oculto">
+        <span class="cerrar" id="cerrar-formulario">&times;</span>
+        <h2>Contáctanos</h2>
+        <form>
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu correo" required>
+            <input placeholder="Tu mensaje" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
             <main>
                 <h1>Bienvenido a Hewi Corp.</h1>
                 <p>Somos una empresa dedicada a ofrecer soluciones innovadoras para tu negocio. Nuestro equipo de expertos está listo para ayudarte a alcanzar tus objetivos.</p>
@@ -44,10 +54,10 @@
                 <div class="hero-text" alt ="Imagen de fondo">
                     <h2>Hewi Corp.</h2>
                     <p>Innovación y excelencia para tu negocio</p>
-                    <button class="btn">Contáctanos</button>
+
+                <button class="btn" id="abrir-formulario">Contáctanos</button>
                 </div>
             </div>
-
 
                 <section id="inicio">
                     <h2>Inicio</h2>
@@ -83,30 +93,38 @@
                     <p>Descripción del servicio 3: Proporcionamos mantenimiento y soporte continuo para garantizar el buen funcionamiento de tus sistemas.</p> 
                 </div>
 
-                <section id="acerca">
-                    <h2>Acerca</h2>
-                    <p>Hewi Corp. fue fundada en 2010 con la misión de transformar la manera en que las empresas operan. Con más de una década de experiencia, hemos ayudado a cientos de clientes a alcanzar el éxito.</p>
-                </section>
+                <div class="grid-descriptor">
+                    <div class="grid-descriptor-item">
+                        <section id="acerca">
+                            <h2>Acerca</h2>
+                            <p>Hewi Corp. fue fundada en 2010 con la misión de transformar la manera en que las empresas operan. Con más de una década de experiencia, hemos ayudado a cientos de clientes a alcanzar el éxito.</p>
+                        </section>
+                    </div>
+                    <div class="grid-descriptor-item"> 
+                        <section id="contacto">
+                            <h2>Contacto</h2>
+                            <p>¿Tienes preguntas o quieres saber más sobre nuestros servicios? No dudes en contactarnos. Estamos aquí para ayudarte.</p>
+                            <ul>
+                                <li>Email: enrique.alegria02@inacapmail.cl
+                                </li>
+                                <li>Teléfono: +56 9 1234 5678</li>
+                                <li>Dirección: Calle Falsa 123, Ciudad, País</li>   
+                            </ul>
+                        </section>
+                    </div>                        
+                </div>
 
-                <section id="contacto">
-                    <h2>Contacto</h2>
-                    <p>¿Tienes preguntas o quieres saber más sobre nuestros servicios? No dudes en contactarnos. Estamos aquí para ayudarte.</p>
-                    <ul>
-                        <li>Email: enrique.alegria02@inacapmail.cl
-                        </li>
-                        <li>Teléfono: +56 9 1234 5678</li>
-                        <li>Dirección: Calle Falsa 123, Ciudad, País</li>   
-                    </ul>
-                </section>
             </main>
 
             <footer>
-                <p>&copy; 2024 Hewi Corp. Todos los derechos reservados.</p>
-                <div class="location" >
-                    <h3>Ubicación</h3>
-                    <p>Calle Falsa 123, Ciudad, País</p>
+                <div class="foot-grid" >
+                    <div class="footer-grid_item">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805.1742582379635!2d-70.51684487271912!3d-33.44761211233083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cde7a14d679d%3A0xbda2d39fa4c39c5f!2sCarpay%2C%20La%20Reina%2C%20Regi%C3%B3n%20Metropolitana!5e1!3m2!1sen!2scl!4v1777428447497!5m2!1sen!2scl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <h2>Ubicación</h2>
+                        <p>Calle Falsa 123, Ciudad, País</p>
+                    </div>
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805.1742582379635!2d-70.51684487271912!3d-33.44761211233083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cde7a14d679d%3A0xbda2d39fa4c39c5f!2sCarpay%2C%20La%20Reina%2C%20Regi%C3%B3n%20Metropolitana!5e1!3m2!1sen!2scl!4v1777428447497!5m2!1sen!2scl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h5>&copy; 2024 Hewi Corp. Todos los derechos reservados.</h5>
             </footer>
 
             <script>
@@ -120,6 +138,22 @@
                 });
             </script>
 
+            <script>
+            const btnAbrir = document.getElementById('abrir-formulario');
+            const formulario = document.getElementById('formulario-contacto');
+            const btnCerrar = document.getElementById('cerrar-formulario');
+
+            btnAbrir.addEventListener('click', () => {
+                formulario.classList.toggle('oculto');
+            });
+            btnAbrir.addEventListener('click', () => {
+                formulario.classList.remove('oculto');
+            });
+
+            btnCerrar.addEventListener('click', () => {
+                formulario.classList.add('oculto');
+            });
+            </script>
         </body>
 
 </html>
