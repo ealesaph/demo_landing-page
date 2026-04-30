@@ -165,6 +165,10 @@ img {
     color: #fff;
     text-align: center;
     padding: 2rem;
+    background: rgba(0, 0, 0, 0.55) url('src/Hero-assets/maxresdefault.jpg') center/cover no-repeat;
+    border-radius: 16px;
+    max-width: 720px;
+    width: 100%;
 }
 
 
